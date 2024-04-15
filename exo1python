@@ -1,0 +1,16 @@
+def table_de_verite():
+    # Affichage de l'en-tête de la table
+    print("x | y | z |1er| 2e")
+    print("--|---|---|---|-----")
+
+    # Boucle pour parcourir toutes les combinaisons possibles de x et y
+    for x in [False, True]:
+        for y in [False, True]:
+          for z in [False, True]:
+               # Calcul de l'opération logique AND
+            resultat = (x and y and z) or (x and not y and z) or (x and not y and not  z) or (not x and y and not z)
+            resultat = (x or y or z) and ( x or not y or z) and ( x or not y or not z) and ( not x or y or not z)
+              # Affichage de chaque ligne de la table
+            print(f"{int(x)} | {int(y)} | {int(z)} | {int(resultat)} | {int(resultat)}")
+            # Appel de la fonction pour afficher la table de vérité de l'opération AND
+table_de_verite()
